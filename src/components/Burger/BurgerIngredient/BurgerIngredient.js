@@ -27,6 +27,10 @@ const burgerIngredient = (props) => {
             break;
         case('bacon'):
             ingredient = <div className="Bacon"> </div>;
+            break;
+        default:
+            console.log('Unknown ingredient: ' + props.type);
+            ingredient = null;
     }
     return ingredient;
 }
