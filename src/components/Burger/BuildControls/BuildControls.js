@@ -16,10 +16,17 @@ const buildControls = (props) => (
         <BuildControl
             key={ctrl.label}
             label={ctrl.label}
+            disabled={props.disabled[ctrl.type]}
             added={() => props.ingredientAdded(ctrl.type)}
             removed={() => props.ingredientRemoved(ctrl.type)} />
     ))}
     </div>
 );
+
+buildControls.propTypes = {
+    disabled: PropTypes.object.isRequired,
+    ingredientAdded: PropTypes.any.isRequired,
+    ingredientRemoved: PropTypes.any.isRequired
+};
 
 export default buildControls;
