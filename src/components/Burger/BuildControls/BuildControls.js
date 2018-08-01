@@ -23,7 +23,8 @@ const buildControls = (props) => (
         ))}
         <button
             disabled={!props.purchaseable}
-            className="OrderButton">
+            className="OrderButton"
+            onClick={props.ordered}>
             Checkout
         </button>
     </div>
@@ -33,6 +34,7 @@ buildControls.propTypes = {
     price: PropTypes.number.isRequired,
     purchaseable: PropTypes.bool.isRequired,
     disabled: PropTypes.object.isRequired,
+    ordered: PropTypes.any.isRequired,
     ingredientAdded: PropTypes.any.isRequired,
     ingredientRemoved: PropTypes.any.isRequired
 };
